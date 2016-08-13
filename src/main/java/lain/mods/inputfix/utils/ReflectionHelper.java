@@ -1,6 +1,7 @@
 package lain.mods.inputfix.utils;
 
 import java.lang.reflect.Method;
+import java.lang.reflect.Field;
 
 public class ReflectionHelper
 {
@@ -15,6 +16,25 @@ public class ReflectionHelper
                 Method m = clazz.getDeclaredMethod(methodName, methodTypes);
                 m.setAccessible(true);
                 return m;
+            }
+            catch (Exception e)
+            {
+                failed = e;
+            }
+        }
+        throw new RuntimeException(failed);
+    }
+
+    public static Field findField(Class<?> clazz, String[] fieldNames)
+    {
+        Exception failed = null;
+        for (String fieldName : fieldNames)
+        {
+            try
+            {
+                Field f = clazz.getDeclaredField(fieldName);
+                f.setAccessible(true);
+                return f;
             }
             catch (Exception e)
             {

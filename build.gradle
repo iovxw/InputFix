@@ -17,12 +17,12 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.9.4"
+version = "1.10.2"
 group= "lain.mods.inputfix"
 archivesBaseName = "InputFix"
 
 minecraft {
-    version = "1.9.4-12.17.0.1976"
+    version = "1.10.2-12.18.1.2011"
     runDir = "run"
 
     mappings = "snapshot_20160518"
