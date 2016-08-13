@@ -11,21 +11,21 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
 
-apply plugin: 'fml'
+apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.8.x-v2"
+version = "1.9.4"
 group= "lain.mods.inputfix"
 archivesBaseName = "InputFix"
 
 minecraft {
-    version = "1.8-7.10.99.1005-1.8"
-    runDir = "eclipse"
-    
-    mappings = "snapshot_nodoc_20140930"
+    version = "1.9.4-12.17.0.1976"
+    runDir = "run"
+
+    mappings = "snapshot_20160518"
 }
 
 jar
@@ -40,8 +40,8 @@ processResources
     from 'LICENSE.txt'
 }
 
-sourceCompatibility = '1.6'
-targetCompatibility = '1.6'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 tasks.withType(JavaCompile) {
     options.compilerArgs += [ '-Xlint:all', '-Xlint:-path' ]
